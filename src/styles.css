@@ -1,0 +1,122 @@
+h1 {
+  text-align: center;
+  color: white;
+  padding-top: 10px;
+  font-weight: 600;
+  margin: 0;
+  font-size: 85px;
+  line-height: 28px;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 60px;
+  font-weight: 600;
+  margin: 0;
+  font-size: 70px;
+  line-height: 18px;
+}
+
+h3 {
+  text-align: center;
+  color: white;
+  font-weight: 200;
+  margin: 0;
+  font-size: 25px;
+  line-height: 18px;
+  padding-bottom: 15px;
+}
+
+h4 {
+  text-align: center;
+  background-color: grey;
+  opacity: 0.8;
+  color: white;
+  font-weight: 100;
+  margin: 0;
+  font-size: 15px;
+  line-height: 18px;
+  padding-bottom: 15px;
+}
+
+h5 {
+  text-align: center;
+  color: white;
+  font-weight: 100;
+  margin: 0;
+  font-size: 25px;
+  line-height: 18px;
+  padding-bottom: 15px;
+}
+
+h6 {
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  margin: 0;
+  font-size: 18px;
+  line-height: 18px;
+  padding-bottom: 15px;
+}
+
+p {
+  text-align: center;
+  color: white;
+  padding-top: 30px;
+  font-weight: 200;
+  margin: 0;
+  font-size: 40px;
+  line-height: 18px;
+}
+
+.bg-image {
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.sun-icon {
+  color: white;
+  font-weight: 600;
+  font-size: 200px;
+  padding-top: 0;
+}
+
+.dayone-icon,
+.daytwo-icon,
+.daythree-icon,
+.dayfour-icon,
+.dayfive-icon {
+  padding-top: 50px;
+  color: white;
+  font-weight: 600;
+  font-size: 60px;
+  padding-top: 0;
+}
+
+.col-centered {
+  float: none;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.btn-primary {
+  color: whitesmoke;
+  border-color: grey;
+  background-color: grey;
+}
+
+.weatherinfo {
+  position: relative;
+  background: rgba(255, 255, 255, 0.5);
+  bottom: 0;
+  right: 0;
+  margin: 10px 30px 10px 30px;
+  padding: 10px 20px 10px 20px;
+  width: 10%;
+  border: 100px;
+  text-align: center;
+  font-size: 10px;
+  list-style: none;
+}
