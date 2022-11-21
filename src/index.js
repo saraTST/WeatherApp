@@ -4,15 +4,54 @@ let realDate = document.querySelector("#Day-Date");
 realDate.innerHTML = `${currentDate}`;
 console.log("date", realDate);
 
+//date time and hour for search
+
+//function formatDate(timestamp) {
+//let dateSearch = new Date(timestamp);
+//let hoursSearch = dateSearch.getHours();
+//if (hoursSearch < 10) {
+//hours = `0${hoursSearch}`;
+//}
+//let minutesSearch = dateSearch.getMinutes();
+//if (minutesSearch < 10) {
+//minutesSearch = `0${minutesSearch}`;
+//}
+//let daysSearch = [
+//"Sunday",
+//"Monday",
+//"Tuesday",
+//"Wednesday",
+//"Thursday",
+//"Friday",
+//"Saturday",
+//];
+//let daySearch = daysSearch[dateSearc.getDay()];
+//return `${daySearch} ${hoursSearch} ${minutesSearch}`;
+//}
+
 //display Weather Info
 
 function currentWeather(response) {
-  console.log(response.data.main.temp);
+  console.log(response.data);
   let tempActual = document.querySelector("#Main-Temp");
   let temp = Math.round(response.data.main.temp);
+  let descriptionActual = document.querySelector("#Description-Day");
+  let humidityElement = document.querySelector("#Humidity");
+  let feelsElement = document.querySelector("#FeelsLike");
+  let windElement = document.querySelector("#WindSpeed");
+  let windValue = Math.round(response.data.wind.speed);
+  //let dateElement = document.querySelector("#Search-Time");
   tempActual.innerHTML = `${temp}°C`;
   let h1 = document.querySelector("#City-Search");
   h1.innerHTML = response.data.name;
+  descriptionActual.innerHTML = response.data.weather[0].description;
+  console.log(response.data.weather[0].description);
+  humidityElement.innerHTML = `${response.data.main.humidity}%`;
+  console.log(response.data.main.humidity);
+  windElement.innerHTML = `${windValue}km/hr`;
+  feelsElement.innerHTML = `${response.data.main.feels_like}°C`;
+  //dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  //console.log(response.data.dt * 1000);
 }
 
 //city search
