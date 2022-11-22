@@ -34,24 +34,46 @@ console.log("date", realDate);
 function currentWeather(response) {
   console.log(response.data);
   let tempActual = document.querySelector("#Main-Temp");
+  //OPENWEATHER
   let temp = Math.round(response.data.main.temp);
+  //SHECODESAPI let temp = Math.round(response.data.temperature.current);
   let descriptionActual = document.querySelector("#Description-Day");
   let humidityElement = document.querySelector("#Humidity");
   let feelsElement = document.querySelector("#FeelsLike");
   let windElement = document.querySelector("#WindSpeed");
-  let windValue = Math.round(response.data.wind.speed);
+  // OPENWEATHER let windValue = Math.round(response.data.wind.speed);
+  //SHECODESAPI let windValue = Math.round(response.data.wind.speed);
   //let dateElement = document.querySelector("#Search-Time");
+  let iconElement = document.querySelector("#Main-Icon");
+
   tempActual.innerHTML = `${temp}°C`;
   let h1 = document.querySelector("#City-Search");
+  //OPENWEATHER
   h1.innerHTML = response.data.name;
+  //SHECODESAPI h1.innerHTML = response.data.city;
+  //OPENWEATHER
   descriptionActual.innerHTML = response.data.weather[0].description;
+  //SHECODESAPI descriptionActual.innerHTML = response.data.condition.description;
+  //SHECODESAPI console.log(response.data.condition.description);
+  //OPENWEATHER
   console.log(response.data.weather[0].description);
-  humidityElement.innerHTML = `${response.data.main.humidity}%`;
+  //OPENWEATHER
+  humidityElement.innerHTML = `${response.data.main.humidity} %`;
   console.log(response.data.main.humidity);
-  windElement.innerHTML = `${windValue}km/hr`;
-  feelsElement.innerHTML = `${response.data.main.feels_like}°C`;
+  //SHECODESAPI humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  //SHECODESAPI windElement.innerHTML = `${windValue}km/hr`;
+  //OPENWEATHER
+  feelsElement.innerHTML = `${response.data.main.feels_like} °C`;
+  //SHECODESAPI feelsElement.innerHTML = `${response.data.temperature.feels_like}°C`;
+  windElement.innerHTML = `${Math.round(response.data.wind.speed)} km/hr`;
   //dateElement.innerHTML = formatDate(response.data.dt * 1000);
   //console.log(response.data.dt * 1000);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+  console.log(response.data.weather[0].icon);
 }
 
 //city search
@@ -76,20 +98,34 @@ let form = document.querySelector("#City-Form");
 form.addEventListener("submit", searchCity);
 
 function search(city) {
+  //openwatherAPI
   let key = "46fac47dd8b8fa26d1b6852218ad3dfe";
   let unit = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
 
+  //sheCodes API
+  //let key = "a6bab70ec52a43963e142ab80toaf081";
+  //let unit = "metric";
+  //let apiUrl = `https://api.shecodes.io/weather/v1/current?query={city}&key=a6bab70ec52a43963e142ab80toaf081&units=metric`;
+  //`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
   axios.get(apiUrl).then(currentWeather);
 }
 
 //Current location
 
 function searchLocation(position) {
+  //openWeather API
   let key = "46fac47dd8b8fa26d1b6852218ad3dfe";
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${key}`;
+  //`https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.latitude}&lon=${coordinates.longitude}&units=metric&appid=${key}`;
   console.log(position.coords.latitude, position.coords.longitude);
   console.log(position);
+
+  //sheCodesAPI
+  //let key = "a6bab70ec52a43963e142ab80toaf081";
+  //let url = `https://api.shecodes.io/weather/v1/forecast?lon=${position.coords.longitude}&lat=${position.coords.latitude}&key=a6bab70ec52a43963e142ab80toaf081&units=metric`;
+  //console.log(position.coords.longitude, position.coords.latitude);
+  //console.log(position);
 
   axios.get(url).then(currentWeather);
 }
