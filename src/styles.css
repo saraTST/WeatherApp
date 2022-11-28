@@ -153,3 +153,13 @@ footer {
 #WindSpeed {
   font-weight: bold;
 }
+
+.weather-forecast {
+  text-align: center;
+  color: white;
+  font-weight: 200;
+  margin: 0;
+  font-size: 25px;
+  line-height: 18px;
+  padding-bottom: 15px;
+}
