@@ -132,15 +132,23 @@ function currentWeather(response) {
 }
 
 // Background image Change
-//function changeBackgroundImage(icon) {
-//  let clearSkyDay = "01d";
-//  let clearSkyNight = "01n";
-//  let clouds = ["02d", "02n", "03d", "03n", "04d", "04n"];
-// let rain = ["09d", "09n", "10d", "10n"];
-//  let storm = ["11d", "11n"];
-//  let snow = ["13n", "13d"];
-//  let mist = ["50d", "50n"];
-//  if (response === clearSkyDay) {
+//function changeBackground() {
+//var d = new Date();
+//var n = d.getHours();
+//console.log("hour", n);
+//if (n == 23 || n < 7) {
+// document.body.className = "night";
+//document.getElementsByID("background-img").style.backgroundImage =
+// url("imgs/toronto.jpeg");
+//} else {
+// document.body.className = "day";
+//document.getElementsByID("background-img").style.backgroundImage = url(
+// "imgs/Torontonight.jpeg"
+//);
+// }
+//}
+//changeBackground();
+
 //    document.getElementsByClassName(".background-img").style.background = url('imgs/toronto.jpeg');
 
 //  }
