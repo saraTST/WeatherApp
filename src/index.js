@@ -60,10 +60,10 @@ function displayForecast(response) {
   <div class="weather-forecast-temperatures">
   <span class="weather-forecast-temperature-max"> Max:${Math.round(
     forecastDay.temp.max
-  )}° </span>
+  )}°C </span>
   <span class="weather-forecast-temperature-min"> Min:${Math.round(
     forecastDay.temp.min
-  )}° </span>
+  )}°C </span>
   </div>
   </div>
   `;
@@ -126,10 +126,25 @@ function currentWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  console.log(response.data.weather[0].icon);
+  console.log("icon", response.data.weather[0].icon);
 
   getForecast(response.data.coord);
 }
+
+// Background image Change
+//function changeBackgroundImage(icon) {
+//  let clearSkyDay = "01d";
+//  let clearSkyNight = "01n";
+//  let clouds = ["02d", "02n", "03d", "03n", "04d", "04n"];
+// let rain = ["09d", "09n", "10d", "10n"];
+//  let storm = ["11d", "11n"];
+//  let snow = ["13n", "13d"];
+//  let mist = ["50d", "50n"];
+//  if (response === clearSkyDay) {
+//    document.getElementsByClassName(".background-img").style.background = url('imgs/toronto.jpeg');
+
+//  }
+//}
 
 //city search
 

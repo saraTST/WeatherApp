@@ -71,7 +71,7 @@ p {
   line-height: 18px;
 }
 
-footer {
+small {
   padding-top: 50px;
 }
 
@@ -159,7 +159,7 @@ footer {
   color: white;
   font-weight: 200;
   margin: 0;
-  font-size: 25px;
+  font-size: 20px;
   line-height: 18px;
   padding-bottom: 15px;
 }
